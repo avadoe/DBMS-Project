@@ -1,0 +1,57 @@
+User
+---
+aadharId (PK)
+name
+age
+address
+phoneNo
+loginName
+password
+
+Owner
+-----
+ownerId (PK)
+aadharId (FK)
+
+Tenant
+------
+tenantId (PK)
+aadharId (FK)
+
+Property
+--------
+propertyId (PK)
+ownerId (FK)
+propertyType
+availableFrom
+availableTill
+rentPerMonth
+annualHike
+totalArea
+plinthArea
+numBedrooms
+numFloors
+yearOfConstruction
+localityId (FK)
+
+Rent
+----
+rentId (PK)
+propertyId (FK)
+tenantId (FK)
+startDate
+endDate
+rentPerMonth
+annualHike
+commission
+
+City
+----
+cityId (PK)
+name
+
+Locality
+--------
+localityId (PK)
+cityId (FK)
+name
