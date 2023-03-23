@@ -72,8 +72,3 @@ OR CURRENT_SETTING('app.role') = 'admin'
 OR CURRENT_SETTING('app.role') = 'manager');
 
 ALTER TABLE RENT ADD CONSTRAINT RENTTENANTCONSTRAINT CHECK (TENANTID != CURRENT_SETTING('app.userid')::VARCHAR);
-
-\du+  -- This will give the list of super users
-select rolname from pg_roles;  -- This will give the list of roles 
-
-CREATE ROLE MANAGER;
