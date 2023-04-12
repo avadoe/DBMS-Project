@@ -72,3 +72,7 @@ OR CURRENT_SETTING('app.role') = 'admin'
 OR CURRENT_SETTING('app.role') = 'manager');
 
 ALTER TABLE RENT ADD CONSTRAINT RENTTENANTCONSTRAINT CHECK (TENANTID != CURRENT_SETTING('app.userid')::VARCHAR);
+
+-- To delete all data from a table:
+TRUNCATE TABLE <tableName>
+
