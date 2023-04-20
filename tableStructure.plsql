@@ -218,3 +218,14 @@ INSERT INTO TENANT VALUES(
     100000003
 );
 
+INSERT INTO OWNER VALUES(3, 100000004)
+INSERT INTO OWNER VALUES(
+    4,
+    100000001
+)
+
+ALTER TABLE PROPERTY DROP CONSTRAINT "property_ownerid_fkey";
+
+-- adding dummy values from extradummy.plsql
+
+alter table PROPERTY add constraint property_ownerid_fkey FOREIGN KEY(ownerid) references owner;

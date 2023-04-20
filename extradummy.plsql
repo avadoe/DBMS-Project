@@ -1,4 +1,4 @@
--- inserting data into the Property table
+-- Inserting data into the PROPERTY table
 INSERT INTO PROPERTY (
     PROPERTYID,
     OWNERID,
@@ -18,33 +18,48 @@ INSERT INTO PROPERTY (
     1,
     '2023-05-01',
     '2024-04-30',
-    20000.00,
-    5.00,
-    2000.00,
-    1000.00,
+    25000,
+    5,
+    1200,
+    800,
     2,
-    2,
+    4,
     2010,
     1,
-    'Swimming pool, Gym'
+    'Swimming pool, gym, security'
 ),
 (
     2,
     2,
-    '2023-04-15',
-    '2024-04-14',
-    25000.00,
-    6.00,
-    2500.00,
-    1200.00,
+    '2023-06-01',
+    '2024-05-31',
+    30000,
+    7,
+    1500,
+    900,
     3,
     3,
     2015,
+    2,
+    'Parking, garden, power backup'
+),
+(
     3,
-    'Garden, Parking'
+    2,
+    '2023-07-01',
+    '2024-06-30',
+    35000,
+    6,
+    2000,
+    1000,
+    3,
+    5,
+    2012,
+    4,
+    'CCTV, intercom, lift'
 );
 
--- inserting data into the Rent table
+-- Inserting data into the RENT table
 INSERT INTO RENT (
     RENTID,
     PROPERTYID,
@@ -58,22 +73,22 @@ INSERT INTO RENT (
 ) VALUES (
     1,
     1,
-    222233334444,
+    100000003,
     '2023-05-01',
     '2024-04-30',
-    20000.00,
-    5.00,
-    2.00,
-    'None'
+    25000,
+    3,
+    2,
+    'Water and electricity bill not included'
 ),
 (
     2,
     2,
-    111122223333,
-    '2023-04-15',
-    '2024-04-14',
-    25000.00,
-    6.00,
-    3.00,
-    'None'
+    100000006,
+    '2023-06-01',
+    '2024-05-31',
+    30000,
+    4,
+    2.5,
+    'Furnished apartment, pet-friendly'
 );
