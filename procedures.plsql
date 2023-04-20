@@ -62,7 +62,7 @@ SELECT
     1,
     'Swimming Pool, Gym');
 
--- get property record
+-- get property records
 
 
 CREATE OR REPLACE PROCEDURE GETPROPERTYRECORDS(
@@ -112,3 +112,64 @@ $$  LANGUAGE PLPGSQL;
 
 CALL GETTENANTDETAILS(1)
 
+-- create new user
+
+CREATE OR REPLACE PROCEDURE CREATENEWUSER(
+    P_AADHARID INT,
+    P_USERNAME VARCHAR(50),
+    AGE INT,
+    P_DOORNO VARCHAR(20),
+    P_STREET VARCHAR(50),
+    P_CITY VARCHAR(20),
+    P_STATE VARCHAR(20),
+    P_PINCODE INT,
+    P_LOGIN VARCHAR(20),
+    P_PASSWORD VARCHAR(20)
+) AS
+    $$  BEGIN INSERT INTO "User" (
+        AADHARID,
+        NAME,
+        AGE,
+        DOORNO,
+        STREET,
+        CITY,
+        STATE,
+        PINCODE,
+        LOGINID,
+        PASSWORD
+    ) VALUES (
+        P_AADHARID,
+        P_USERNAME,
+        AGE,
+        P_DOORNO ,
+        P_STREET ,
+        P_CITY ,
+        P_STATE ,
+        P_PINCODE ,
+        P_LOGIN ,
+        P_PASSWORD 
+    );
+END;
+$$  LANGUAGE PLPGSQL;
+
+CALL CREATENEWUSER( 
+    100000007, 'John Doe', 30, 'Flat 101', 'Example Street', 'Example City', 'Example State', 
+    123456, 'johndoe@example.com', 'password');
+
+
+-- rent history of a given property
+
+CREATE OR REPLACE PROCEDURE GETRENTHISTORY(
+    P_PROPERTY_ID INTEGER
+) AS
+    $$  BEGIN
+    SELECT
+        *
+    FROM
+        RENT
+    WHERE
+        PROPERTYID = P_PROPERTY_ID;
+END;
+$$  LANGUAGE PLPGSQL;
+
+CALL GETRENTHISTORY(1)
