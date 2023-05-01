@@ -47,7 +47,8 @@ CREATE OR REPLACE FUNCTION INSERTPROPERTYRECORD(
 END;
 $$  LANGUAGE PLPGSQL;
 
-SELECT
+-- function, so we are using select instead of call
+SELECT 
     INSERTPROPERTYRECORD(5,
     2,
     '2022-01-01',
